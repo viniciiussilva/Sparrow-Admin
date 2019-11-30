@@ -1,9 +1,8 @@
 <?php
-print_r(realpath(dirname(__FILE__, 2) . '/src/config/Database.php'));
 
-require_once dirname(__FILE__, 2) . '/src/config/Database.php';
+require_once realpath(dirname(__FILE__) . '/config/config.php');
+require_once MODEL_PATH . '/usuario.php';
 
-$conexao = new Database();
-var_dump($conexao->getConection());
+$usuario = new Usuario(["primeiro_nome" => "Vinicius", "segundo_nome" => "Silva"]);
 
-Database::getConection();
+var_dump($usuario);
